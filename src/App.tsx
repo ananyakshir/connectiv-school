@@ -9,6 +9,8 @@ import Resources from "./pages/Resources";
 import Quiz from "./pages/Quiz";
 import Doubts from "./pages/Doubts";
 import Achievements from "./pages/Achievements";
+import Auth from "./pages/Auth";
+import AdminPanel from "./pages/AdminPanel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +23,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<AdminPanel />} />
           <Route path="/events" element={<Events />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/quiz" element={<Quiz />} />

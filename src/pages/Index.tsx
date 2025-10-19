@@ -1,8 +1,9 @@
 import { Navigation } from "@/components/Navigation";
-import { Calendar, BookOpen, Brain, MessageSquare, Award, ArrowRight } from "lucide-react";
+import { Calendar, BookOpen, Brain, MessageSquare, Award, ArrowRight, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 const features = [
   {
@@ -48,9 +49,27 @@ const features = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+      
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex justify-end gap-2">
+          {user ? (
+            <Button variant="outline" onClick={() => signOut()}>
+              Logout
+            </Button>
+          ) : (
+            <Button onClick={() => navigate('/auth')}>
+              <LogIn className="w-4 h-4 mr-2" />
+              Login
+            </Button>
+          )}
+        </div>
+      </div>
       
       <main>
         <section className="container px-4 py-20 text-center">
