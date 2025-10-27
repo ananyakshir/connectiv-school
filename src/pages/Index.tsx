@@ -76,7 +76,7 @@ const Index = () => {
           <div className="mx-auto max-w-3xl space-y-6">
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
               Welcome to{" "}
-              <span className="text-gradient-primary">Student Connect</span>
+              <span className="text-gradient-primary">Student Bridge</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Your comprehensive digital hub for school events, academic resources, 
@@ -128,7 +128,7 @@ const Index = () => {
             <div className="mx-auto max-w-3xl text-center space-y-4">
               <h2 className="text-3xl font-bold">Empowering Students for Success</h2>
               <p className="text-muted-foreground">
-                Student Connect brings together all the tools you need to stay organized, 
+                Student Bridge brings together all the tools you need to stay organized, 
                 learn effectively, and achieve your academic goals. Join thousands of students 
                 who are making their school life more meaningful and productive.
               </p>

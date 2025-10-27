@@ -19,9 +19,9 @@ export const Navigation = () => {
       <div className="container flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary">
-            <span className="text-lg font-bold text-primary-foreground">SC</span>
+            <span className="text-lg font-bold text-primary-foreground">SB</span>
           </div>
-          <span className="text-xl font-bold text-gradient-primary">Student Connect</span>
+          <span className="text-xl font-bold text-gradient-primary">Student Bridge</span>
         </Link>
 
         <div className="flex items-center space-x-1">

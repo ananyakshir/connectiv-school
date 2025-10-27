@@ -98,7 +98,7 @@ const Auth = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-4">
       <Card className="w-full max-w-md shadow-elegant">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">Student Connect Portal</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">Student Bridge Portal</CardTitle>
           <CardDescription className="text-center">
             Welcome back! Please login to continue
           </CardDescription>
