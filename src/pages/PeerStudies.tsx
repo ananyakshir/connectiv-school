@@ -35,12 +35,10 @@ const PeerStudies = () => {
   const [conversationId, setConversationId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!user) {
-      navigate("/auth");
-      return;
+    if (user) {
+      fetchStudents();
     }
-    fetchStudents();
-  }, [user, navigate]);
+  }, [user]);
 
   useEffect(() => {
     if (conversationId) {
@@ -183,9 +181,23 @@ const PeerStudies = () => {
           <p className="text-muted-foreground">Connect with classmates and study together</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Students List */}
-          <Card className="md:col-span-1">
+        {!user ? (
+          <Card className="max-w-2xl mx-auto shadow-glow">
+            <CardContent className="text-center py-12">
+              <Users className="h-16 w-16 mx-auto mb-4 opacity-50 text-muted-foreground" />
+              <h3 className="text-xl font-semibold mb-2">Connect with Your Classmates</h3>
+              <p className="text-muted-foreground mb-6">
+                Sign in to start chatting with your peers, ask questions, and collaborate on studies
+              </p>
+              <Button onClick={() => navigate("/auth")} className="gradient-primary">
+                Sign In to Continue
+              </Button>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Students List */}
+            <Card className="md:col-span-1">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Users className="h-5 w-5" />
@@ -268,6 +280,7 @@ const PeerStudies = () => {
             </CardContent>
           </Card>
         </div>
+        )}
       </div>
     </div>
   );

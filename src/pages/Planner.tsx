@@ -38,12 +38,10 @@ const Planner = () => {
   });
 
   useEffect(() => {
-    if (!user) {
-      navigate("/auth");
-      return;
+    if (user) {
+      fetchTasks();
     }
-    fetchTasks();
-  }, [user, navigate, selectedDate]);
+  }, [user, selectedDate]);
 
   const fetchTasks = async () => {
     if (!selectedDate) return;
@@ -160,9 +158,23 @@ const Planner = () => {
           <p className="text-muted-foreground">Organize your tasks and stay productive</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Calendar */}
-          <Card className="md:col-span-1">
+        {!user ? (
+          <Card className="max-w-2xl mx-auto shadow-glow">
+            <CardContent className="text-center py-12">
+              <CalendarIcon className="h-16 w-16 mx-auto mb-4 opacity-50 text-muted-foreground" />
+              <h3 className="text-xl font-semibold mb-2">Organize Your Day</h3>
+              <p className="text-muted-foreground mb-6">
+                Sign in to create and manage your daily tasks, set priorities, and stay on top of your schedule
+              </p>
+              <Button onClick={() => navigate("/auth")} className="gradient-primary">
+                Sign In to Continue
+              </Button>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Calendar */}
+            <Card className="md:col-span-1">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <CalendarIcon className="h-5 w-5" />
@@ -279,6 +291,7 @@ const Planner = () => {
             </CardContent>
           </Card>
         </div>
+        )}
       </div>
     </div>
   );
