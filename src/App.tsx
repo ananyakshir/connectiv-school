@@ -11,6 +11,8 @@ import Doubts from "./pages/Doubts";
 import Achievements from "./pages/Achievements";
 import Auth from "./pages/Auth";
 import AdminPanel from "./pages/AdminPanel";
+import PeerStudies from "./pages/PeerStudies";
+import Planner from "./pages/Planner";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/doubts" element={<Doubts />} />
+          <Route path="/peer-studies" element={<PeerStudies />} />
+          <Route path="/planner" element={<Planner />} />
           <Route path="/achievements" element={<Achievements />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
