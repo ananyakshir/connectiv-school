@@ -13,6 +13,8 @@ import Auth from "./pages/Auth";
 import AdminPanel from "./pages/AdminPanel";
 import PeerStudies from "./pages/PeerStudies";
 import Planner from "./pages/Planner";
+import Notes from "./pages/Notes";
+import SyllabusProgress from "./pages/SyllabusProgress";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +35,8 @@ const App = () => (
           <Route path="/doubts" element={<Doubts />} />
           <Route path="/peer-studies" element={<PeerStudies />} />
           <Route path="/planner" element={<Planner />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/syllabus" element={<SyllabusProgress />} />
           <Route path="/achievements" element={<Achievements />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

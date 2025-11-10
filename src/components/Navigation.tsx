@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Calendar, BookOpen, Brain, MessageSquare, Award, Home, Users, CalendarDays } from "lucide-react";
+import { Calendar, BookOpen, Brain, MessageSquare, Award, Home, Users, CalendarDays, StickyNote, ListChecks } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -10,6 +10,8 @@ const navItems = [
   { to: "/doubts", label: "Doubts", icon: MessageSquare },
   { to: "/peer-studies", label: "Peer Studies", icon: Users },
   { to: "/planner", label: "Planner", icon: CalendarDays },
+  { to: "/notes", label: "Notes", icon: StickyNote },
+  { to: "/syllabus", label: "Syllabus", icon: ListChecks },
   { to: "/achievements", label: "Achievements", icon: Award },
 ];
 

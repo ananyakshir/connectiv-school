@@ -93,6 +93,39 @@ export type Database = {
           },
         ]
       }
+      notes: {
+        Row: {
+          content: string | null
+          created_at: string
+          id: string
+          subject: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content?: string | null
+          created_at?: string
+          id?: string
+          subject?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          content?: string | null
+          created_at?: string
+          id?: string
+          subject?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       planner_tasks: {
         Row: {
           completed: boolean | null
@@ -147,6 +180,42 @@ export type Database = {
           email?: string
           full_name?: string | null
           id?: string
+        }
+        Relationships: []
+      }
+      syllabus_items: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          progress: number
+          status: Database["public"]["Enums"]["syllabus_status"]
+          subject: string
+          topic: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          progress?: number
+          status?: Database["public"]["Enums"]["syllabus_status"]
+          subject: string
+          topic: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          progress?: number
+          status?: Database["public"]["Enums"]["syllabus_status"]
+          subject?: string
+          topic?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -210,6 +279,7 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "teacher" | "student"
+      syllabus_status: "not_started" | "in_progress" | "completed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -338,6 +408,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "teacher", "student"],
+      syllabus_status: ["not_started", "in_progress", "completed"],
     },
   },
 } as const
